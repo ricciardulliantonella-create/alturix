@@ -1,0 +1,89 @@
+# Use DecapBridge PKCE auth (required)
+backend:
+  name: git-gateway
+  repo: ricciardulliantonella-create/Alturix
+  branch: main
+  auth_type: pkce
+  base_url: https://auth.decapbridge.com
+  auth_endpoint: /sites/631ce410-a9fa-4853-b579-6c458ceb8269/pkce
+  auth_token_endpoint: /sites/631ce410-a9fa-4853-b579-6c458ceb8269/token
+  gateway_url: https://gateway.decapbridge.com
+  # See who did what (optional)
+  commit_messages:
+    create: Create {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}> via DecapBridge
+    update: Update {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}> via DecapBridge
+    delete: Delete {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}> via DecapBridge
+    uploadMedia: Upload “{{path}}” - {{author-name}} <{{author-login}}> via DecapBridge
+    deleteMedia: Delete “{{path}}” - {{author-name}} <{{author-login}}> via DecapBridge
+    openAuthoring: Message {{message}} - {{author-name}} <{{author-login}}> via DecapBridge
+
+# Enable PKCE fields (optional, recommended)
+auth:
+  email_claim: email
+  first_name_claim: first_name
+  last_name_claim: last_name
+  avatar_url_claim: avatar_url
+
+# Better Decap + Bridge logo (optional)
+logo_url: https://decapbridge.com/decapcms-with-bridge.svg
+
+# Add site links in Decap CMS (optional)
+site_url: https://www.alturixcanaria.com
+
+# Carpeta donde se guardan las imágenes subidas de los productos
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+locale: "es"
+
+collections:
+  - name: "catalogo"
+    label: "Catálogo"
+    files:
+      - name: "catalog"
+        label: "Productos y categorías"
+        file: "catalog.json"
+        format: "json"
+        description: "Añade o edita los productos. Recuerda pulsar 'Publish' para que aparezcan en la web."
+        fields:
+          - label: "Categorías"
+            name: "categories"
+            widget: "list"
+            label_singular: "Categoría"
+            summary: "{{fields.label.es}}"
+            fields:
+              - { label: "ID (sin espacios)", name: "id", widget: "string", hint: "ej: lineas-vida, anclajes, epi, cubiertas" }
+              - { label: "Icono (emoji)", name: "icon", widget: "string", required: false }
+              - label: "Nombre de la categoría"
+                name: "label"
+                widget: "object"
+                fields:
+                  - { label: "Español", name: "es", widget: "string" }
+                  - { label: "Italiano", name: "it", widget: "string", required: false }
+                  - { label: "Inglés", name: "en", widget: "string", required: false }
+
+          - label: "Productos"
+            name: "products"
+            widget: "list"
+            label_singular: "Producto"
+            summary: "{{fields.name.es}}"
+            fields:
+              - { label: "ID interno", name: "id", widget: "string", required: false, hint: "cualquiera, único (ej: p10)" }
+              - { label: "Categoría (ID)", name: "category", widget: "string", hint: "escribe el ID de una categoría de arriba (ej: lineas-vida)" }
+              - label: "Nombre del producto"
+                name: "name"
+                widget: "object"
+                fields:
+                  - { label: "Español", name: "es", widget: "string" }
+                  - { label: "Italiano", name: "it", widget: "string", required: false }
+                  - { label: "Inglés", name: "en", widget: "string", required: false }
+              - label: "Descripción"
+                name: "desc"
+                widget: "object"
+                fields:
+                  - { label: "Español", name: "es", widget: "text", required: false }
+                  - { label: "Italiano", name: "it", widget: "text", required: false }
+                  - { label: "Inglés", name: "en", widget: "text", required: false }
+              - { label: "Imagen / foto", name: "image", widget: "image", required: false, hint: "sube la foto del producto" }
+              - { label: "Precio (opcional)", name: "price", widget: "string", required: false }
+              - { label: "Mostrar en la web", name: "available", widget: "boolean", default: true }

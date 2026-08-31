@@ -1,0 +1,7 @@
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# File temporanei del bridge cloud (da eliminare)
+_to_delete/
