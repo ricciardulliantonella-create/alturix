@@ -352,7 +352,7 @@ footer{background:#070708;border-top:1px solid var(--line);padding:40px 0 28px}
       <div class="cinfo">
         <p data-i="contact_sub">Cuéntanos tu proyecto y te asesoramos sobre la mejor solución de protección para trabajos en altura.</p>
         <div class="cline"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg></div><div><b data-i="c_phone">Teléfono</b><a href="tel:+34642442948">+34 642 442 948</a></div></div>
-        <div class="cline"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg></div><div><b data-i="c_email">Email</b><a href="mailto:info@alturixcanaria.com">info@alturixcanaria.com</a></div></div>
+        <div class="cline"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg></div><div><b data-i="c_email">Email</b><a href="mailto:alturixcanaria@gmail.com">alturixcanaria@gmail.com</a></div></div>
         <div class="cline"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/></svg></div><div><b data-i="c_loc">Ubicación</b><span>Tenerife, Islas Canarias</span></div></div>
         <div class="cline"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></div><div><b data-i="c_web">Web</b><a href="https://www.alturixcanaria.com" target="_blank" rel="noopener">www.alturixcanaria.com</a></div></div>
       </div>
@@ -365,7 +365,7 @@ footer{background:#070708;border-top:1px solid var(--line);padding:40px 0 28px}
         <div class="field"><label data-i="f_email">Email</label><input type="email" name="email" id="f_email" required></div>
         <div class="field"><label data-i="f_msg">Mensaje</label><textarea name="message" id="f_msg" rows="5" required></textarea></div>
         <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center" data-i="f_send">Enviar mensaje</button>
-        <p class="form-note" data-i="f_note">Al enviar, se abrirá tu aplicación de correo con el mensaje ya preparado hacia info@alturixcanaria.com.</p>
+        <p class="form-note" data-i="f_note">Al enviar, se abrirá tu aplicación de correo con el mensaje ya preparado hacia alturixcanaria@gmail.com.</p>
       </form>
     </div>
   </div>
@@ -460,7 +460,7 @@ const T = {
     contact_sub:"Cuéntanos tu proyecto y te asesoramos sobre la mejor solución de protección para trabajos en altura.",
     c_phone:"Teléfono",c_email:"Email",c_loc:"Ubicación",c_web:"Web",
     f_name:"Nombre",f_phone:"Teléfono",f_email:"Email",f_msg:"Mensaje",f_send:"Enviar mensaje",
-    f_note:"Al enviar, se abrirá tu aplicación de correo con el mensaje ya preparado hacia info@alturixcanaria.com.",
+    f_note:"Al enviar, se abrirá tu aplicación de correo con el mensaje ya preparado hacia alturixcanaria@gmail.com.",
     form_ok:"¡Gracias! Se abrirá tu cliente de correo para enviar el mensaje.",
     foot_tag:"Líneas de vida y sistemas de protección para trabajadores en altura"
   },
@@ -497,7 +497,7 @@ const T = {
     contact_sub:"Raccontaci il tuo progetto e ti consigliamo la migliore soluzione di protezione per i lavori in quota.",
     c_phone:"Telefono",c_email:"Email",c_loc:"Sede",c_web:"Web",
     f_name:"Nome",f_phone:"Telefono",f_email:"Email",f_msg:"Messaggio",f_send:"Invia messaggio",
-    f_note:"All'invio si aprirà la tua app di posta con il messaggio già pronto verso info@alturixcanaria.com.",
+    f_note:"All'invio si aprirà la tua app di posta con il messaggio già pronto verso alturixcanaria@gmail.com.",
     form_ok:"Grazie! Si aprirà il tuo client di posta per inviare il messaggio.",
     foot_tag:"Linee vita e sistemi di protezione per chi lavora in quota"
   },
@@ -534,7 +534,7 @@ const T = {
     contact_sub:"Tell us about your project and we'll advise you on the best fall-protection solution.",
     c_phone:"Phone",c_email:"Email",c_loc:"Location",c_web:"Web",
     f_name:"Name",f_phone:"Phone",f_email:"Email",f_msg:"Message",f_send:"Send message",
-    f_note:"On submit, your email app opens with the message ready to send to info@alturixcanaria.com.",
+    f_note:"On submit, your email app opens with the message ready to send to alturixcanaria@gmail.com.",
     form_ok:"Thank you! Your email client will open to send the message.",
     foot_tag:"Lifelines and protection systems for people working at height"
   }
@@ -657,7 +657,7 @@ document.getElementById('cform').addEventListener('submit',function(e){
     (T[lang].f_msg||'Message')+':\n'+msg
   );
   document.getElementById('formOk').classList.add('show');
-  window.location.href='mailto:info@alturixcanaria.com?subject='+subj+'&body='+body;
+  window.location.href='mailto:alturixcanaria@gmail.com?subject='+subj+'&body='+body;
 });
 
 document.getElementById('yr').textContent=new Date().getFullYear();
